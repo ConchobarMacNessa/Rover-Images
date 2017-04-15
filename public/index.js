@@ -1,9 +1,11 @@
 /* eslint-disable */
 function updateDOM(dataArr) {
   document.getElementById('app').innerHTML = '';
-  var roverImage = createEl('img', 'roverImage', null, dataArr[0].img_src);
-  var app = document.getElementById('app');
-  app.appendChild(roverImage);
+  dataArr.forEach(function(obj){
+    var roverImage = createEl('img', 'roverImage', null, obj.img_src);
+    var app = document.getElementById('app');
+    app.appendChild(roverImage);
+  })
 };
 
 function createEl(element, className, text, url) {
