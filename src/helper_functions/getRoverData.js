@@ -11,6 +11,7 @@ function getRoverData(maxSol, cb) {
     const parsedBody = JSON.parse(body);
     for (let i = 0; i < 9; i++) {
       const obj = {};
+      obj.id = i;
       obj.img_src = parsedBody.photos[i].img_src;
       obj.earth_date = parsedBody.photos[i].earth_date;
       obj.rover_name = parsedBody.photos[i].rover.name;

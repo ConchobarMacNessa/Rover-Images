@@ -2,17 +2,43 @@
 function updateDOM(dataArr) {
   document.getElementById('app').innerHTML = '';
   dataArr.forEach(function(obj){
-    var roverImage = createEl('img', 'roverImage', null, obj.img_src);
+    var id = obj.id + '';
+    var roverImage = createEl('img', 'roverImage', 'image'+ id, null, obj.img_src, openModal);
     var app = document.getElementById('app');
     app.appendChild(roverImage);
+
+    var modal = createEl('div', 'modal', 'modal' + id);
+    var modalContent = createEl('div', null, id, 'hello');
+    var close = createEl('span', 'modal__close', 'X');
+    app.appendChild(modal);
+    modal.appendChild(modalContent);
+    modal.appendChild(close);
   })
 };
 
-function createEl(element, className, text, url) {
+
+
+// var close = document.getElementsByClassName('modal__close')[0];
+//
+// close.onclick = function() {
+//   modal.style.display = 'none';
+// }
+
+function openModal(e){
+  var targetClass = e.target.id;
+  var modalId = 'modal' + targetClass.slice(5);
+  console.log(modalId);
+  var modal = document.getElementById('modalId');
+  console.log(modal);
+};
+
+function createEl(element, className, id, text, url, func) {
   var el = document.createElement(element);
   el.className = className || '';
+  el.id = id || '';
   el.textContent = text || '';
   if(url) el.src = url;
+  if (func) el.onclick = func;
   return el;
 }
 
