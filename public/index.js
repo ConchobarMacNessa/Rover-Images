@@ -9,20 +9,19 @@ function updateDOM(dataArr) {
 
     var modal = createEl('div', 'modal', 'modal' + id);
     var modalContent = createEl('div', 'modal__content', id, 'hello');
-    var close = createEl('span', 'modal__close', 'close' + id, 'X');
+    var close = createEl('span', 'modal__close', 'close' + id, 'X', null, closeModal);
     app.appendChild(modal);
     modal.appendChild(modalContent);
     modal.appendChild(close);
   })
 };
 
-
-
-// var close = document.getElementsByClassName('modal__close')[0];
-//
-// close.onclick = function() {
-//   modal.style.display = 'none';
-// }
+function closeModal(e){
+  var targetClass = e.target.id;
+  var modalId = 'modal' + targetClass.slice(5);
+  var modal = document.getElementById(modalId);
+  modal.style.display = 'none';
+}
 
 function openModal(e){
   var targetClass = e.target.id;
