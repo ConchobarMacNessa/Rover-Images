@@ -7,29 +7,40 @@ function updateDOM(dataArr) {
     var app = document.getElementById('app');
     app.appendChild(roverImage);
 
+    var modalText = createModalText(obj);
+
     var modal = createEl('div', 'modal', 'modal' + id);
-    var modalContent = createEl('div', null, id, 'hello');
-    var close = createEl('span', 'modal__close', 'X');
+    var modalContent = createEl('div', 'modal__content', id);
+    var modalContainer = createEl('div', 'modal__container');
+    var modalTextContainer = createEl('div', 'modal__container', null, modalText);
+    var close = createEl('span', 'modal__close', 'close' + id, 'X', null, closeModal);
+    var enlargedImage = createEl('img', 'modal__image', 'enlargedImage' + id, null, obj.img_src);
     app.appendChild(modal);
     modal.appendChild(modalContent);
-    modal.appendChild(close);
+    modalContent.appendChild(modalContainer);
+    modalContainer.appendChild(enlargedImage);
+    modalContent.appendChild(modalTextContainer);
+    modalContent.appendChild(close);
   })
 };
 
+function createModalText(obj) {
+  var text = 'This image was taken on ' + obj.earth_date + ', by ' + obj.rover_name + '\'s ' + obj.camera_name + '.\n' + obj.rover_name + ' landed on Mars on ' + obj.landing_date + ', and has spent ' + obj.max_sol + ' sols on the planet, taking ' + obj.total_photos + ' photos to date.';
+  return text;
+}
 
-
-// var close = document.getElementsByClassName('modal__close')[0];
-//
-// close.onclick = function() {
-//   modal.style.display = 'none';
-// }
+function closeModal(e){
+  var targetClass = e.target.id;
+  var modalId = 'modal' + targetClass.slice(5);
+  var modal = document.getElementById(modalId);
+  modal.style.display = 'none';
+}
 
 function openModal(e){
   var targetClass = e.target.id;
   var modalId = 'modal' + targetClass.slice(5);
-  console.log(modalId);
-  var modal = document.getElementById('modalId');
-  console.log(modal);
+  var modal = document.getElementById(modalId);
+  modal.style.display = 'block';
 };
 
 function createEl(element, className, id, text, url, func) {

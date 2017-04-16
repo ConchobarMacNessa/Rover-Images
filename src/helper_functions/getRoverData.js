@@ -9,7 +9,7 @@ function getRoverData(maxSol, cb) {
     }
     const data = [];
     const parsedBody = JSON.parse(body);
-    for (let i = 0; i < 9; i++) {
+    for (let i = 0; i < 6; i++) {
       const obj = {};
       obj.id = i;
       obj.img_src = parsedBody.photos[i].img_src;
@@ -18,6 +18,7 @@ function getRoverData(maxSol, cb) {
       obj.landing_date = parsedBody.photos[i].rover.landing_date;
       obj.total_photos = parsedBody.photos[i].rover.total_photos;
       obj.camera_name = parsedBody.photos[i].camera.full_name;
+      obj.max_sol = parsedBody.photos[i].rover.max_sol;
       data.push(obj);
     }
     cb(data);
