@@ -9,7 +9,7 @@ function getRoverData(maxSol, cb) {
     }
     const data = [];
     const parsedBody = JSON.parse(body);
-    for (let i = 0; i < 9; i++) {
+    for (let i = 0; i < 6; i++) {
       const obj = {};
       obj.id = i;
       obj.img_src = parsedBody.photos[i].img_src;
