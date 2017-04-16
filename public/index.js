@@ -13,7 +13,7 @@ function updateDOM(dataArr) {
     var modalContent = createEl('div', 'modal__content', id);
     var modalContainer = createEl('div', 'modal__container');
     var modalTextContainer = createEl('div', 'modal__container', null, modalText);
-    var close = createEl('span', 'modal__close', 'close' + id, 'X', null, closeModal);
+    var close = createEl('span', 'modal__close', 'close' + id, 'Close tab', null, closeModal);
     var enlargedImage = createEl('img', 'modal__image', 'enlargedImage' + id, null, obj.img_src);
     app.appendChild(modal);
     modal.appendChild(modalContent);

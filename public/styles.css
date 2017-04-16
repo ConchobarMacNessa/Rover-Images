@@ -22,7 +22,7 @@ body {
 }
 
 .modal__container {
-  flex-direction: row;
+  flex-direction: column;
   width: 50%;
 }
 
@@ -47,12 +47,12 @@ body {
   width: 100%;
   height: 100%;
   background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0,0,0,0.8);
 }
 
 .modal__content {
   background-color: #E4E7F2;
-  margin: 15% auto;
+  margin: 12% auto;
   padding: 20px;
   width: 80%;
   font-family: 'Open Sans';
@@ -60,8 +60,8 @@ body {
 
 .modal__close {
   color: #E0473D;
-  float: right;
-  font-size: 28px;
+  /*float: right;*/
+  font-size: 16px;
   font-weight: bold;
   font-family: 'Open Sans';
 }
