@@ -1,0 +1,61 @@
+/* Sky black #313131 */
+/*mars Red #E0473D */
+/*light #E4E7F2 */
+/*close #EAB22B*/
+
+body {
+  background-color: #313131;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.roverImage {
+  flex-direction: row;
+  height: 20em;
+  cursor: pointer;
+}
+
+.title {
+  font-family: 'Rubik Mono One';
+  color: #E0473D;
+  text-align: center;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal__content {
+  background-color: #E4E7F2;
+  margin: 15% auto;
+  padding: 20px;
+  width: 80%;
+}
+
+.modal__close {
+  color: #EAB22B;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.modal__close:hover,
+.modal__close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
