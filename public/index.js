@@ -8,7 +8,7 @@ function updateDOM(dataArr) {
     app.appendChild(roverImage);
 
     var modal = createEl('div', 'modal', 'modal' + id);
-    var modalContent = createEl('div', null, id, 'hello');
+    var modalContent = createEl('div', 'modal__content', id, 'hello');
     var close = createEl('span', 'modal__close', 'X');
     app.appendChild(modal);
     modal.appendChild(modalContent);
@@ -27,9 +27,8 @@ function updateDOM(dataArr) {
 function openModal(e){
   var targetClass = e.target.id;
   var modalId = 'modal' + targetClass.slice(5);
-  console.log(modalId);
-  var modal = document.getElementById('modalId');
-  console.log(modal);
+  var modal = document.getElementById(modalId);
+  modal.style.display = 'block';
 };
 
 function createEl(element, className, id, text, url, func) {
