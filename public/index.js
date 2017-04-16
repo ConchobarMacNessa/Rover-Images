@@ -9,7 +9,7 @@ function updateDOM(dataArr) {
 
     var modal = createEl('div', 'modal', 'modal' + id);
     var modalContent = createEl('div', 'modal__content', id, 'hello');
-    var close = createEl('span', 'modal__close', 'X');
+    var close = createEl('span', 'modal__close', 'close' + id, 'X');
     app.appendChild(modal);
     modal.appendChild(modalContent);
     modal.appendChild(close);
