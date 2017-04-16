@@ -18,6 +18,7 @@ function getRoverData(maxSol, cb) {
       obj.landing_date = parsedBody.photos[i].rover.landing_date;
       obj.total_photos = parsedBody.photos[i].rover.total_photos;
       obj.camera_name = parsedBody.photos[i].camera.full_name;
+      obj.max_sol = parsedBody.photos[i].rover.max_sol;
       data.push(obj);
     }
     cb(data);

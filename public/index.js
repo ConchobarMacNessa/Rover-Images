@@ -7,14 +7,21 @@ function updateDOM(dataArr) {
     var app = document.getElementById('app');
     app.appendChild(roverImage);
 
+    var modalText = createModalText(obj);
+
     var modal = createEl('div', 'modal', 'modal' + id);
-    var modalContent = createEl('div', 'modal__content', id, 'hello');
+    var modalContent = createEl('div', 'modal__content', id, modalText);
     var close = createEl('span', 'modal__close', 'close' + id, 'X', null, closeModal);
     app.appendChild(modal);
     modal.appendChild(modalContent);
     modal.appendChild(close);
   })
 };
+
+function createModalText(obj) {
+  var text = 'This image was taken on ' + obj.earth_date + ', by ' + obj.rover_name + '\'s ' + obj.camera_name + '.\n' + obj.rover_name + ' landed on Mars on ' + obj.landing_date + ', and has spent ' + obj.max_sol + ' sols on the planet, taking ' + obj.total_photos + ' photos to date.';
+  return text;
+}
 
 function closeModal(e){
   var targetClass = e.target.id;
