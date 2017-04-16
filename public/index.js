@@ -10,12 +10,16 @@ function updateDOM(dataArr) {
     var modalText = createModalText(obj);
 
     var modal = createEl('div', 'modal', 'modal' + id);
-    var modalContent = createEl('div', 'modal__content', id, modalText);
+    var modalContent = createEl('div', 'modal__content', id);
+    var modalContainer = createEl('div', 'modal__container');
+    var modalTextContainer = createEl('div', 'modal__container', null, modalText);
     var close = createEl('span', 'modal__close', 'close' + id, 'X', null, closeModal);
     var enlargedImage = createEl('img', 'modal__image', 'enlargedImage' + id, null, obj.img_src);
     app.appendChild(modal);
     modal.appendChild(modalContent);
-    modalContent.appendChild(enlargedImage);
+    modalContent.appendChild(modalContainer);
+    modalContainer.appendChild(enlargedImage);
+    modalContent.appendChild(modalTextContainer);
     modalContent.appendChild(close);
   })
 };

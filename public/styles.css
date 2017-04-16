@@ -15,6 +15,17 @@ body {
   margin: 0 auto;
 }
 
+.modal__content {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.modal__container {
+  flex-direction: row;
+  width: 50%;
+}
+
 .roverImage {
   flex-direction: row;
   height: 20em;
