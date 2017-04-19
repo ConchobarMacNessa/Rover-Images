@@ -7,7 +7,7 @@ const vision = require('vision');
 const routes = require('./routes');
 
 server.connection({
-  host: 'localhost',
+  // host: 'localhost',
   port: process.env.PORT || 4000,
 });
 
