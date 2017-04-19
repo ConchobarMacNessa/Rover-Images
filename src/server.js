@@ -1,4 +1,5 @@
 const hapi = require('hapi');
+
 const server = new hapi.Server();
 const inert = require('inert');
 const vision = require('vision');

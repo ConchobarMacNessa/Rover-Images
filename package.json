@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/ConchobarMacNessa/Rover-Images#readme",
   "dependencies": {
+    "env2": "^2.1.1",
     "hapi": "^16.1.1",
     "inert": "^4.2.0",
     "request": "^2.81.0",
