@@ -1,4 +1,5 @@
 const hapi = require('hapi');
+require('env2')('config.env');
 
 const server = new hapi.Server();
 const inert = require('inert');
@@ -7,7 +8,7 @@ const routes = require('./routes');
 
 server.connection({
   host: 'localhost',
-  port: 4000,
+  port: process.env.PORT || 4000,
 });
 
 server.register([inert, vision], (err) => {
