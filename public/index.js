@@ -68,4 +68,5 @@ function fetch(method, url, cb) {
     request.send();
 };
 
-fetch('GET', 'http://localhost:4000/api', updateDOM);
+// fetch('GET', 'http://localhost:4000/api', updateDOM);
+fetch('GET', 'https://rover-vision.herokuapp.com/api', updateDOM);
