@@ -13,7 +13,6 @@ function getRoverData(maxSol, cb) {
     for (let i = 0; i < length; i++) {
       const obj = {};
       obj.id = i;
-      console.log('ID', i);
       obj.img_src = parsedBody.photos[i].img_src;
       obj.earth_date = parsedBody.photos[i].earth_date;
       obj.rover_name = parsedBody.photos[i].rover.name;
